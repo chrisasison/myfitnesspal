@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport">
+	<title>My Fitness Pal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">My Fitness Pal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/workout">Workouts</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/exercise">Exercises</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/populated">Workouts & Exercises</a>
+        </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container col-md-4 col-md-offset-4" id="main-wrapper">
+  <form id="workout-form">
+    <h3 style="margin:1rem 0">Choose a workout</h3>
+    <input type="text" class="form-control" id="workout-name" name="workout-name" placeholder="Workout Name" autofocus>
+    <button class="btn btn-lg btn-info btn-block submit w-25" id="submit-workout">Submit</button>
+  </form>
+</div>
+
+<section class="content">
+  <h3>Your Workouts</h3>
+  <div id="button-wrapper"></div>
+</section>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal</h5>
+          <p style="display:none" id="hidden-id"></p>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="exercise-form1" style="text-align:center">
+              <h6>Create a New Exercise</h6>
+              <label for="exercise-name">Exercise Name</label>
+              <input type="text" placeholder="Name" id="exercise-name" name="exercise-name">
+          </form>
+          <div class="exercise-type">
+              <div class="type-btn-wrapper">
+              <button id="cardio-select" class="btn btn-primary">Aerobic</button>
+              <button id="weight-select" class="btn btn-danger">Anaerobic</button>
+              </div>
+          </div>
+          <div>
+              <form id="exercise-form2">
+                  <input type="text" class="cardio" placeholder="Duration" name="cardio-duration" id="cardio-duration" style="display:none">
+                  <input type="text" class="cardio" placeholder="Distance" name="cardio-distance" id="cardio-distance" style="display:none">
+                  <input type="text" class="weights" placeholder="Weight" name="weight" id="weight" style="display:none">
+                  <input type="text" class="weights" placeholder="Reps" name="reps" id="reps" style="display:none">
+                  <input type="text" class="weights" placeholder="Sets" name="sets" id="sets" style="display:none">
+                  <button class="btn btn-lg btn-info btn-block submit" id="submit-exercise" style="display:none" value="">Submit</button>
+              </form>
+          </div>
+          <div class="exercise-history">
+            <div class="row">
+            <section class="col-6">
+                <h6 style="padding:1rem">Aerobic Exercises</h6>
+                <div class="cardio-section"></div>
+            </section>
+            <section class="col-6">
+                <h6 style="padding:1rem">Anaerobic Exercises</h6>
+                <div class="weights-section"></div>
+            </section>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Success!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Workout has been generated.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+<script src="index.js"></script>
+</body>
+</html>
